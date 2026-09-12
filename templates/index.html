@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Weather Agent</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<main class="container">
+
+    <header>
+
+        <div class="logo">
+            🌍
+        </div>
+
+        <div>
+            <h1>AI Weather Agent</h1>
+            <p>Your intelligent weather companion</p>
+        </div>
+
+    </header>
+
+
+    <section class="search-box">
+
+        <input
+            type="text"
+            id="message"
+            placeholder="Ask about the weather..."
+            autocomplete="off"
+        >
+
+        <button onclick="askAgent()">
+            Check Weather
+        </button>
+
+    </section>
+
+
+    <section class="suggestions">
+
+        <button onclick="quickAsk('What is the weather in Guntur?')">
+            🌦️ Weather in Guntur
+        </button>
+
+        <button onclick="quickAsk('Is it raining in Guntur?')">
+            ☔ Will it rain?
+        </button>
+
+        <button onclick="quickAsk('Should I carry an umbrella in Guntur?')">
+            🌂 Umbrella advice
+        </button>
+
+    </section>
+
+
+    <!-- WEATHER DASHBOARD -->
+
+    <section id="weatherCard" class="weather-card">
+
+        <div class="weather-top">
+
+            <div>
+                <p class="location-label">CURRENT WEATHER</p>
+
+                <h2 id="city">
+                    Guntur
+                </h2>
+            </div>
+
+            <div id="weatherIcon" class="weather-icon">
+                🌤️
+            </div>
+
+        </div>
+
+
+        <div class="temperature">
+
+            <span id="temperature">
+                --
+            </span>
+
+            <span class="degree">
+                °C
+            </span>
+
+        </div>
+
+
+        <p id="description" class="description">
+            Waiting for weather data...
+        </p>
+
+
+        <div class="weather-grid">
+
+            <div class="weather-item">
+
+                <span class="item-icon">
+                    💧
+                </span>
+
+                <div>
+                    <small>Humidity</small>
+                    <strong id="humidity">--</strong>
+                </div>
+
+            </div>
+
+
+            <div class="weather-item">
+
+                <span class="item-icon">
+                    🌡️
+                </span>
+
+                <div>
+                    <small>Feels Like</small>
+                    <strong id="feelsLike">--</strong>
+                </div>
+
+            </div>
+
+
+            <div class="weather-item">
+
+                <span class="item-icon">
+                    💨
+                </span>
+
+                <div>
+                    <small>Wind</small>
+                    <strong id="wind">--</strong>
+                </div>
+
+            </div>
+
+
+            <div class="weather-item">
+
+                <span class="item-icon">
+                    ☔
+                </span>
+
+                <div>
+                    <small>Rain</small>
+                    <strong id="rain">--</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AI RECOMMENDATION -->
+
+    <section class="ai-card">
+
+        <div class="ai-title">
+
+            <span>🤖</span>
+
+            <div>
+                <h2>AI Recommendation</h2>
+                <p>Powered by local AI</p>
+            </div>
+
+        </div>
+
+
+        <div id="result" class="ai-result">
+
+            Ask me about the weather and I'll help you decide what to do.
+
+        </div>
+
+    </section>
+
+
+    <!-- LOADING -->
+
+    <div id="loading" class="loading">
+
+        <div class="spinner"></div>
+
+        <span>AI agent is analyzing the weather...</span>
+
+    </div>
+
+
+    <footer>
+
+        <p>
+            🌍 AI Weather Agent • Ollama • OpenWeather
+        </p>
+
+    </footer>
+
+</main>
+
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
