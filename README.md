@@ -153,4 +153,4 @@ ollama
 
 **Mubarak Sayyad** — [GitHub](https://github.com/MubarakSyed09)
 
-3rd Year B.Tech CSE student, VFSTR.
+3rd Year B.Tech CSE student, Vignan's University Guntur 
